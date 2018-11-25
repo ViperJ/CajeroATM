@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="excepciones\LongitudInvalidaExcepcion.cs" />
+    <Compile Include="excepciones\ValidacionExcepcion.cs" />
+    <Compile Include="modelo\AyudanteValidacion.cs" />
     <Compile Include="vistas\Pantalla10.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,5 +216,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

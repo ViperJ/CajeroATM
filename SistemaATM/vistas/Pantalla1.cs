@@ -12,6 +12,8 @@ namespace SistemaATM
 {
     public partial class Pantalla1 : Form
     {
+        string a;
+
         public Pantalla1()
         {
             InitializeComponent();
