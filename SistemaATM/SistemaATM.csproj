@@ -48,6 +48,12 @@
     <Compile Include="excepciones\LongitudInvalidaExcepcion.cs" />
     <Compile Include="excepciones\ValidacionExcepcion.cs" />
     <Compile Include="modelo\AyudanteValidacion.cs" />
+    <Compile Include="vistas\MyTestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vistas\MyTestControl.Designer.cs">
+      <DependentUpon>MyTestControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\Pantalla10.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     <Compile Include="vistas\TableroNumerico.Designer.cs">
       <DependentUpon>TableroNumerico.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vistas\MyTestControl.resx">
+      <DependentUpon>MyTestControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\Pantalla1.resx">
       <DependentUpon>Pantalla1.cs</DependentUpon>
     </EmbeddedResource>
