@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using SistemaATM.excepciones;
 using System.Globalization;
 
-namespace FormularioClientes
+namespace SistemaATM
 {
     public class AyudanteValidacion
     {
@@ -99,6 +99,14 @@ namespace FormularioClientes
             if (Regex.IsMatch(entrada, patron))
                 sonValidos = true;
             return sonValidos;
+        }
+
+        public static bool verificarCaracterEsValido(char c)
+        {
+            bool esValido = false;
+            if (char.IsDigit(c))
+                esValido = true;
+            return esValido;
         }
 
         public static bool esFechaValida(string entrada, string patron)
