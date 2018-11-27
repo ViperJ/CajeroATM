@@ -12,22 +12,24 @@ namespace SistemaATM.vistas
 {
     public partial class TableroNumerico : UserControl
     {
-        private TextBox textBox;
+        private Pantalla pantalla;
+        private string nombreCampo;
+        private bool caracterInvalido;
+
+        //public TextBox TextBox { get => textBox; set => textBox = value; }
+        public Pantalla Pantalla { get => pantalla; set => pantalla = value; }
+        public string NombreCampo { get => nombreCampo; set => nombreCampo = value; }
+        public int LongitudCampo { get => datos_txb.MaxLength; set => datos_txb.MaxLength = value; }
 
         public TableroNumerico()
         {
             InitializeComponent();
         }
 
-        public void obtenerTextBox(TextBox t)
-        {
-            textBox = t;
-        }
-
         private void escribirTextBox(string texto)
         {
-            string nuevoTexto = string.Concat(textBox.Text, texto);
-            textBox.Text = nuevoTexto;
+            string nuevoTexto = string.Concat(datos_txb.Text, texto);
+            datos_txb.Text = nuevoTexto;
         }
 
         private void numeroUno_btn_Click(object sender, EventArgs e)
@@ -79,6 +81,40 @@ namespace SistemaATM.vistas
         private void numCero_btn_Click(object sender, EventArgs e)
         {
             escribirTextBox("0");
+        }
+
+        private void aceptar_btn_Click(object sender, EventArgs e)
+        {
+            pantalla.aceptarBtn_click(datos_txb.Text);
+        }
+
+        private void datos_txb_TextChanged(object sender, EventArgs e)
+        {
+            if (caracterInvalido == true)
+            {
+                caracterInvalido = false;
+                string texto = datos_txb.Text;
+                if (texto.Length > 0)
+                    datos_txb.Text = texto.Remove(texto.Length - 1);
+                string msj = string.Format("El campo {0} solo puede contener valores numericos!", nombreCampo);
+                MessageBox.Show(this, msj, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void datos_txb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!AyudanteValidacion.verificarCaracterEsValido(e.KeyChar))
+                caracterInvalido = true;
+        }
+
+        private void cancelar_btn_Click(object sender, EventArgs e)
+        {
+            pantalla.cancelar();
+        }
+
+        private void borrar_btn_Click(object sender, EventArgs e)
+        {
+            datos_txb.Text = datos_txb.Text.Remove(datos_txb.Text.Length - 1);
         }
     }
 }

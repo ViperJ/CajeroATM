@@ -1,4 +1,4 @@
-﻿namespace SistemaATM
+﻿namespace SistemaATM.vistas
 {
     partial class Pantalla3
     {
@@ -31,10 +31,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableroBotones_pnl = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.tableroBotones_pnl.SuspendLayout();
+            this.aceptar_btn = new System.Windows.Forms.Button();
+            this.cancelar_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -60,7 +58,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Su PIN es incorrecto!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label3
             // 
@@ -74,34 +71,25 @@
             this.label3.Text = "BANCO EL INVOLUCRE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tableroBotones_pnl
+            // aceptar_btn
             // 
-            this.tableroBotones_pnl.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableroBotones_pnl.Controls.Add(this.button9);
-            this.tableroBotones_pnl.Controls.Add(this.button10);
-            this.tableroBotones_pnl.Location = new System.Drawing.Point(181, 332);
-            this.tableroBotones_pnl.Name = "tableroBotones_pnl";
-            this.tableroBotones_pnl.Size = new System.Drawing.Size(277, 54);
-            this.tableroBotones_pnl.TabIndex = 5;
-            this.tableroBotones_pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.tableroBotones_pnl_Paint);
+            this.aceptar_btn.Location = new System.Drawing.Point(199, 213);
+            this.aceptar_btn.Name = "aceptar_btn";
+            this.aceptar_btn.Size = new System.Drawing.Size(114, 40);
+            this.aceptar_btn.TabIndex = 12;
+            this.aceptar_btn.Text = "Aceptar";
+            this.aceptar_btn.UseVisualStyleBackColor = true;
+            this.aceptar_btn.Click += new System.EventHandler(this.aceptar_btn_Click);
             // 
-            // button9
+            // cancelar_btn
             // 
-            this.button9.Location = new System.Drawing.Point(22, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(114, 40);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Aceptar";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(142, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(114, 40);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Cancelar";
-            this.button10.UseVisualStyleBackColor = true;
+            this.cancelar_btn.Location = new System.Drawing.Point(331, 213);
+            this.cancelar_btn.Name = "cancelar_btn";
+            this.cancelar_btn.Size = new System.Drawing.Size(114, 40);
+            this.cancelar_btn.TabIndex = 13;
+            this.cancelar_btn.Text = "Cancelar";
+            this.cancelar_btn.UseVisualStyleBackColor = true;
+            this.cancelar_btn.Click += new System.EventHandler(this.cancelar_btn_Click);
             // 
             // Pantalla3
             // 
@@ -109,13 +97,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(643, 422);
-            this.Controls.Add(this.tableroBotones_pnl);
+            this.Controls.Add(this.cancelar_btn);
+            this.Controls.Add(this.aceptar_btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Pantalla3";
             this.Text = "Pantalla3";
-            this.tableroBotones_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,8 +114,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel tableroBotones_pnl;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button aceptar_btn;
+        private System.Windows.Forms.Button cancelar_btn;
     }
 }

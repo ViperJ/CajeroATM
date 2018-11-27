@@ -8,33 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaATM
+namespace SistemaATM.vistas
 {
     public partial class Pantalla3 : Form
     {
+
+        private Form pantAnterior;
+        public Form PantAnterior { get => pantAnterior; set => pantAnterior = value; }
+
         public Pantalla3()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void aceptar_btn_Click(object sender, EventArgs e)
         {
-
+            Pantalla2.referencia.Show();
+            this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void cancelar_btn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableroBotones_pnl_Paint(object sender, PaintEventArgs e)
-        {
-
+            Pantalla1.referencia.Show();
+            this.Close();
         }
     }
 }

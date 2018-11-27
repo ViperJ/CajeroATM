@@ -16,5 +16,18 @@ namespace SistemaATM.vistas
         {
             InitializeComponent();
         }
+
+        private void aceptar_btn_Click(object sender, EventArgs e)
+        {
+            Pantalla15 pantalla15 = new Pantalla15();
+            pantalla15.Show();
+            this.Close();
+        }
+
+        private void cancelar_btn_Click(object sender, EventArgs e)
+        {
+            Pantalla1.referencia.Show();
+            this.Close();
+        }
     }
 }

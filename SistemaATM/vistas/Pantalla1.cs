@@ -8,59 +8,73 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaATM
+namespace SistemaATM.vistas
 {
-    public partial class Pantalla1 : Form
+    public partial class Pantalla1 : Form, Pantalla
     {
-        //private AyudanteValidacion ayudValidacion;
-        private bool caracterInvalidol;
+        public static Form referencia;
 
         public Pantalla1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableroBotones_pnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tarjetaCredito_txb_TextChanged(object sender, EventArgs e)
-        {
-            if (caracterInvalidol == true)
-            {
-                caracterInvalidol = false;
-                string texto = tarjetaCredito_txb.Text;
-                if (texto.Length > 0)
-                    tarjetaCredito_txb.Text = texto.Remove(texto.Length - 1);
-                MessageBox.Show(this, "El campo Tarjeta de Credito solo puede contener valores numericos!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            referencia = this;
         }
 
         private void tableroNumerico1_Load(object sender, EventArgs e)
         {
-            tableroNumerico1.obtenerTextBox(tarjetaCredito_txb);
+            tableroNumerico1.Pantalla = this;
+            tableroNumerico1.NombreCampo = "Tarjeta De Credito";
+            tableroNumerico1.LongitudCampo = 16;
         }
 
-        private void tarjetaCredito_txb_KeyPress(object sender, KeyPressEventArgs e)
+        public void aceptarBtn_click(string dato)
         {
-            if (!AyudanteValidacion.verificarCaracterEsValido(e.KeyChar))
-                caracterInvalidol = true;
+            string msj = "Hola Mundo";
+            if (AyudanteValidacion.estaVacio(dato))
+            {
+                msj = "El campo Tarjeta de Credito no puede estar vacio!";
+                MessageBox.Show(this, msj, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int longitudCampo = tableroNumerico1.LongitudCampo;
+            if (!AyudanteValidacion.esLongitudValida(dato, longitudCampo, longitudCampo))
+            {
+                msj = string.Format("El campo Tarjeta de Credito no cumple con la longitud requerida! La longitud debe de ser {0}", longitudCampo);
+                MessageBox.Show(this, msj, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string tipo = AyudanteValidacion.validarTipoTarjeta(dato);
+            if (tipo == "NO VALIDO")
+            {
+                msj = "El campo Tarjeta de Credito No Es Valido! Necesita Ser VISA O MASTERCARD";
+                MessageBox.Show(this, msj, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                tipoTarjeta_lb.Text = tipo;
+                tipoTarjeta_lb.Visible = true;
+            }
+
+            Pantalla2 pantalla2 = new Pantalla2();
+            pantalla2.Show();
+            this.Hide();
+        }
+
+        private void Pantalla1_Load(object sender, EventArgs e)
+        {
+            tipoTarjeta_lb.Visible = false;
+        }
+
+        private void Pantalla1_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        public void cancelar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

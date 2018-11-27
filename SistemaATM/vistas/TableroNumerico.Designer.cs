@@ -44,11 +44,12 @@
             this.numTres_btn = new System.Windows.Forms.Button();
             this.numDos_btn = new System.Windows.Forms.Button();
             this.numUno_btn = new System.Windows.Forms.Button();
+            this.datos_txb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(171, 151);
+            this.button15.Location = new System.Drawing.Point(173, 201);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(61, 40);
             this.button15.TabIndex = 31;
@@ -56,7 +57,7 @@
             // 
             // numCero_btn
             // 
-            this.numCero_btn.Location = new System.Drawing.Point(93, 151);
+            this.numCero_btn.Location = new System.Drawing.Point(95, 201);
             this.numCero_btn.Name = "numCero_btn";
             this.numCero_btn.Size = new System.Drawing.Size(61, 40);
             this.numCero_btn.TabIndex = 30;
@@ -66,7 +67,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(16, 151);
+            this.button13.Location = new System.Drawing.Point(18, 201);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(61, 40);
             this.button13.TabIndex = 29;
@@ -74,16 +75,17 @@
             // 
             // aceptar_btn
             // 
-            this.aceptar_btn.Location = new System.Drawing.Point(256, 151);
+            this.aceptar_btn.Location = new System.Drawing.Point(258, 201);
             this.aceptar_btn.Name = "aceptar_btn";
             this.aceptar_btn.Size = new System.Drawing.Size(114, 40);
             this.aceptar_btn.TabIndex = 28;
             this.aceptar_btn.Text = "Aceptar";
             this.aceptar_btn.UseVisualStyleBackColor = true;
+            this.aceptar_btn.Click += new System.EventHandler(this.aceptar_btn_Click);
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(256, 105);
+            this.button12.Location = new System.Drawing.Point(258, 155);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(114, 40);
             this.button12.TabIndex = 27;
@@ -91,25 +93,27 @@
             // 
             // borrar_btn
             // 
-            this.borrar_btn.Location = new System.Drawing.Point(256, 59);
+            this.borrar_btn.Location = new System.Drawing.Point(258, 109);
             this.borrar_btn.Name = "borrar_btn";
             this.borrar_btn.Size = new System.Drawing.Size(114, 40);
             this.borrar_btn.TabIndex = 26;
             this.borrar_btn.Text = "Borrar";
             this.borrar_btn.UseVisualStyleBackColor = true;
+            this.borrar_btn.Click += new System.EventHandler(this.borrar_btn_Click);
             // 
             // cancelar_btn
             // 
-            this.cancelar_btn.Location = new System.Drawing.Point(256, 13);
+            this.cancelar_btn.Location = new System.Drawing.Point(258, 63);
             this.cancelar_btn.Name = "cancelar_btn";
             this.cancelar_btn.Size = new System.Drawing.Size(114, 40);
             this.cancelar_btn.TabIndex = 21;
             this.cancelar_btn.Text = "Cancelar";
             this.cancelar_btn.UseVisualStyleBackColor = true;
+            this.cancelar_btn.Click += new System.EventHandler(this.cancelar_btn_Click);
             // 
             // numNueve_btn
             // 
-            this.numNueve_btn.Location = new System.Drawing.Point(171, 105);
+            this.numNueve_btn.Location = new System.Drawing.Point(173, 155);
             this.numNueve_btn.Name = "numNueve_btn";
             this.numNueve_btn.Size = new System.Drawing.Size(61, 40);
             this.numNueve_btn.TabIndex = 25;
@@ -119,7 +123,7 @@
             // 
             // numOcho_btn
             // 
-            this.numOcho_btn.Location = new System.Drawing.Point(93, 105);
+            this.numOcho_btn.Location = new System.Drawing.Point(95, 155);
             this.numOcho_btn.Name = "numOcho_btn";
             this.numOcho_btn.Size = new System.Drawing.Size(61, 40);
             this.numOcho_btn.TabIndex = 24;
@@ -129,7 +133,7 @@
             // 
             // numSiete_btn
             // 
-            this.numSiete_btn.Location = new System.Drawing.Point(16, 105);
+            this.numSiete_btn.Location = new System.Drawing.Point(18, 155);
             this.numSiete_btn.Name = "numSiete_btn";
             this.numSiete_btn.Size = new System.Drawing.Size(61, 40);
             this.numSiete_btn.TabIndex = 23;
@@ -139,7 +143,7 @@
             // 
             // numSeis_btn
             // 
-            this.numSeis_btn.Location = new System.Drawing.Point(171, 59);
+            this.numSeis_btn.Location = new System.Drawing.Point(173, 109);
             this.numSeis_btn.Name = "numSeis_btn";
             this.numSeis_btn.Size = new System.Drawing.Size(61, 40);
             this.numSeis_btn.TabIndex = 22;
@@ -149,7 +153,7 @@
             // 
             // numCinco_btn
             // 
-            this.numCinco_btn.Location = new System.Drawing.Point(93, 59);
+            this.numCinco_btn.Location = new System.Drawing.Point(95, 109);
             this.numCinco_btn.Name = "numCinco_btn";
             this.numCinco_btn.Size = new System.Drawing.Size(61, 40);
             this.numCinco_btn.TabIndex = 20;
@@ -159,7 +163,7 @@
             // 
             // numCuatro_btn
             // 
-            this.numCuatro_btn.Location = new System.Drawing.Point(16, 59);
+            this.numCuatro_btn.Location = new System.Drawing.Point(18, 109);
             this.numCuatro_btn.Name = "numCuatro_btn";
             this.numCuatro_btn.Size = new System.Drawing.Size(61, 40);
             this.numCuatro_btn.TabIndex = 19;
@@ -169,7 +173,7 @@
             // 
             // numTres_btn
             // 
-            this.numTres_btn.Location = new System.Drawing.Point(171, 13);
+            this.numTres_btn.Location = new System.Drawing.Point(173, 63);
             this.numTres_btn.Name = "numTres_btn";
             this.numTres_btn.Size = new System.Drawing.Size(61, 40);
             this.numTres_btn.TabIndex = 18;
@@ -179,7 +183,7 @@
             // 
             // numDos_btn
             // 
-            this.numDos_btn.Location = new System.Drawing.Point(93, 13);
+            this.numDos_btn.Location = new System.Drawing.Point(95, 63);
             this.numDos_btn.Name = "numDos_btn";
             this.numDos_btn.Size = new System.Drawing.Size(61, 40);
             this.numDos_btn.TabIndex = 17;
@@ -189,7 +193,7 @@
             // 
             // numUno_btn
             // 
-            this.numUno_btn.Location = new System.Drawing.Point(16, 13);
+            this.numUno_btn.Location = new System.Drawing.Point(18, 63);
             this.numUno_btn.Name = "numUno_btn";
             this.numUno_btn.Size = new System.Drawing.Size(61, 40);
             this.numUno_btn.TabIndex = 16;
@@ -197,10 +201,21 @@
             this.numUno_btn.UseVisualStyleBackColor = true;
             this.numUno_btn.Click += new System.EventHandler(this.numeroUno_btn_Click);
             // 
+            // datos_txb
+            // 
+            this.datos_txb.Location = new System.Drawing.Point(76, 18);
+            this.datos_txb.MaxLength = 16;
+            this.datos_txb.Name = "datos_txb";
+            this.datos_txb.Size = new System.Drawing.Size(220, 20);
+            this.datos_txb.TabIndex = 32;
+            this.datos_txb.TextChanged += new System.EventHandler(this.datos_txb_TextChanged);
+            this.datos_txb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.datos_txb_KeyPress);
+            // 
             // TableroNumerico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.datos_txb);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.numCero_btn);
             this.Controls.Add(this.button13);
@@ -218,8 +233,9 @@
             this.Controls.Add(this.numDos_btn);
             this.Controls.Add(this.numUno_btn);
             this.Name = "TableroNumerico";
-            this.Size = new System.Drawing.Size(388, 216);
+            this.Size = new System.Drawing.Size(388, 275);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -241,5 +257,6 @@
         private System.Windows.Forms.Button numTres_btn;
         private System.Windows.Forms.Button numDos_btn;
         private System.Windows.Forms.Button numUno_btn;
+        private System.Windows.Forms.TextBox datos_txb;
     }
 }

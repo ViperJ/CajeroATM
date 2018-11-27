@@ -12,9 +12,24 @@ namespace SistemaATM.vistas
 {
     public partial class Pantalla4 : Form
     {
+        private Form pantAnterior;
+        public Form PantAnterior { get => pantAnterior; set => pantAnterior = value; }
+
         public Pantalla4()
         {
             InitializeComponent();
+        }
+
+        private void aceptar_btn_Click(object sender, EventArgs e)
+        {
+            Pantalla2.referencia.Show();
+            this.Close();
+        }
+
+        private void cancelar_btn_Click(object sender, EventArgs e)
+        {
+            Pantalla1.referencia.Show();
+            this.Close();
         }
     }
 }
