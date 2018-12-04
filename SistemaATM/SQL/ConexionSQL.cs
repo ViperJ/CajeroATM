@@ -26,6 +26,8 @@ namespace SistemaATM.SQL
 
 
 
+
+
         /// <summary>
         /// Este metodo hace un query al llamar uno de los procedimientos creados por el 
         /// profesor en el archivo ATM.sql
@@ -34,9 +36,9 @@ namespace SistemaATM.SQL
         /// <param name="paramName">el nombre del parametro dentro del procedimiento</param>
         /// <param name="param">el valor del paremetro</param>
         /// <returns></returns>
-        public string query(string procedure, string columnName, string paramName, string param)
+        public List<string> query(string procedure, string[] columnas, params ParametroSQL[] parametros)
         {
-            string r = "No existe";
+            List<string> r = new List<string>();
             SqlDataReader reader = null;
             try
             {
@@ -52,12 +54,19 @@ namespace SistemaATM.SQL
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // 
-                cmd.Parameters.AddWithValue(paramName, param);
+                foreach (ParametroSQL p in parametros)
+                {
+                    cmd.Parameters.AddWithValue(p.NombreP, p.ValorP);
+                }
+                
 
                 // Crea el reader para almacenar el resultado del query
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                r = reader[columnName].ToString();
+                for (int i = 0; i < columnas.Length; i++)
+                {
+                    r.Add(reader[columnas[i]].ToString());
+                }
             } 
             catch (Exception e)
             {
@@ -72,6 +81,21 @@ namespace SistemaATM.SQL
                     reader.Close();
             }
             return r;
+        }
+
+        public struct ParametroSQL
+        {
+            private string nombreP;
+            private object valorP;
+
+            public string NombreP { get => nombreP; set => nombreP = value; }
+            public object ValorP { get => valorP; set => valorP = value; }
+
+            public ParametroSQL(string pN, object p)
+            {
+                nombreP = pN;
+                valorP = p;
+            }
         }
     }
 }

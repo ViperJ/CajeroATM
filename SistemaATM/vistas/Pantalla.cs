@@ -9,6 +9,6 @@ namespace SistemaATM.vistas
     public interface Pantalla
     {
         void aceptarBtn_click(string dato);
-        void cancelar();
+        void cancelarBtn_click();
     }
 }

@@ -47,7 +47,18 @@
   <ItemGroup>
     <Compile Include="excepciones\LongitudInvalidaExcepcion.cs" />
     <Compile Include="excepciones\ValidacionExcepcion.cs" />
+    <Compile Include="masterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="masterDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="modelo\AyudanteValidacion.cs" />
+    <Compile Include="SQL\ConexionSQL.cs" />
     <Compile Include="vistas\DatosDePantalla.cs" />
     <Compile Include="vistas\MyTestControl.cs">
       <SubType>UserControl</SubType>
@@ -56,97 +67,97 @@
       <DependentUpon>MyTestControl.cs</DependentUpon>
     </Compile>
     <Compile Include="vistas\Pantalla.cs" />
-    <Compile Include="vistas\Pantalla10.cs">
+    <Compile Include="vistas\P10_CajeroNoDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla10.Designer.cs">
-      <DependentUpon>Pantalla10.cs</DependentUpon>
+    <Compile Include="vistas\P10_CajeroNoDisponible.Designer.cs">
+      <DependentUpon>P10_CajeroNoDisponible.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla11.cs">
+    <Compile Include="vistas\P11_BalanceActualizando.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla11.Designer.cs">
-      <DependentUpon>Pantalla11.cs</DependentUpon>
+    <Compile Include="vistas\P11_BalanceActualizando.Designer.cs">
+      <DependentUpon>P11_BalanceActualizando.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla12.cs">
+    <Compile Include="vistas\P12_ErrorProcesoDep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla12.Designer.cs">
-      <DependentUpon>Pantalla12.cs</DependentUpon>
+    <Compile Include="vistas\P12_ErrorProcesoDep.Designer.cs">
+      <DependentUpon>P12_ErrorProcesoDep.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla13.cs">
+    <Compile Include="vistas\P13_InsertarDeposito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla13.Designer.cs">
-      <DependentUpon>Pantalla13.cs</DependentUpon>
+    <Compile Include="vistas\P13_InsertarDeposito.Designer.cs">
+      <DependentUpon>P13_InsertarDeposito.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla14.cs">
+    <Compile Include="vistas\P14_ImpresionBalance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla14.Designer.cs">
-      <DependentUpon>Pantalla14.cs</DependentUpon>
+    <Compile Include="vistas\P14_ImpresionBalance.Designer.cs">
+      <DependentUpon>P14_ImpresionBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla15.cs">
+    <Compile Include="vistas\P15_TransaccionTerminada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla15.Designer.cs">
-      <DependentUpon>Pantalla15.cs</DependentUpon>
+    <Compile Include="vistas\P15_TransaccionTerminada.Designer.cs">
+      <DependentUpon>P15_TransaccionTerminada.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla3.cs">
+    <Compile Include="vistas\P3_PinIncorrecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla3.Designer.cs">
-      <DependentUpon>Pantalla3.cs</DependentUpon>
+    <Compile Include="vistas\P3_PinIncorrecto.Designer.cs">
+      <DependentUpon>P3_PinIncorrecto.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla1.cs">
+    <Compile Include="vistas\P1_IngresoTargeta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla1.Designer.cs">
-      <DependentUpon>Pantalla1.cs</DependentUpon>
+    <Compile Include="vistas\P1_IngresoTargeta.Designer.cs">
+      <DependentUpon>P1_IngresoTargeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla2.cs">
+    <Compile Include="vistas\P2_IngresoPin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla2.Designer.cs">
-      <DependentUpon>Pantalla2.cs</DependentUpon>
+    <Compile Include="vistas\P2_IngresoPin.Designer.cs">
+      <DependentUpon>P2_IngresoPin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vistas\Pantalla4.cs">
+    <Compile Include="vistas\P4_UsuarioBloqueado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla4.Designer.cs">
-      <DependentUpon>Pantalla4.cs</DependentUpon>
+    <Compile Include="vistas\P4_UsuarioBloqueado.Designer.cs">
+      <DependentUpon>P4_UsuarioBloqueado.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla5.cs">
+    <Compile Include="vistas\P5_SeleccionTransaccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla5.Designer.cs">
-      <DependentUpon>Pantalla5.cs</DependentUpon>
+    <Compile Include="vistas\P5_SeleccionTransaccion.Designer.cs">
+      <DependentUpon>P5_SeleccionTransaccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla6.cs">
+    <Compile Include="vistas\P6_VerBalance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla6.Designer.cs">
-      <DependentUpon>Pantalla6.cs</DependentUpon>
+    <Compile Include="vistas\P6_VerBalance.Designer.cs">
+      <DependentUpon>P6_VerBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla7.cs">
+    <Compile Include="vistas\P7_HacerRetiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla7.Designer.cs">
-      <DependentUpon>Pantalla7.cs</DependentUpon>
+    <Compile Include="vistas\P7_HacerRetiro.Designer.cs">
+      <DependentUpon>P7_HacerRetiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla8.cs">
+    <Compile Include="vistas\P8_FondosInsuficientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla8.Designer.cs">
-      <DependentUpon>Pantalla8.cs</DependentUpon>
+    <Compile Include="vistas\P8_FondosInsuficientes.Designer.cs">
+      <DependentUpon>P8_FondosInsuficientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Pantalla9.cs">
+    <Compile Include="vistas\P9_ErrorDispensacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Pantalla9.Designer.cs">
-      <DependentUpon>Pantalla9.cs</DependentUpon>
+    <Compile Include="vistas\P9_ErrorDispensacion.Designer.cs">
+      <DependentUpon>P9_ErrorDispensacion.cs</DependentUpon>
     </Compile>
     <Compile Include="vistas\TableroNumerico.cs">
       <SubType>UserControl</SubType>
@@ -157,29 +168,29 @@
     <EmbeddedResource Include="vistas\MyTestControl.resx">
       <DependentUpon>MyTestControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla1.resx">
-      <DependentUpon>Pantalla1.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P1_IngresoTargeta.resx">
+      <DependentUpon>P1_IngresoTargeta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla10.resx">
-      <DependentUpon>Pantalla10.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P10_CajeroNoDisponible.resx">
+      <DependentUpon>P10_CajeroNoDisponible.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla11.resx">
-      <DependentUpon>Pantalla11.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P11_BalanceActualizando.resx">
+      <DependentUpon>P11_BalanceActualizando.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla12.resx">
-      <DependentUpon>Pantalla12.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P12_ErrorProcesoDep.resx">
+      <DependentUpon>P12_ErrorProcesoDep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla13.resx">
-      <DependentUpon>Pantalla13.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P13_InsertarDeposito.resx">
+      <DependentUpon>P13_InsertarDeposito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla14.resx">
-      <DependentUpon>Pantalla14.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P14_ImpresionBalance.resx">
+      <DependentUpon>P14_ImpresionBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla15.resx">
-      <DependentUpon>Pantalla15.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P15_TransaccionTerminada.resx">
+      <DependentUpon>P15_TransaccionTerminada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla2.resx">
-      <DependentUpon>Pantalla2.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P2_IngresoPin.resx">
+      <DependentUpon>P2_IngresoPin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -189,31 +200,54 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="vistas\Pantalla3.resx">
-      <DependentUpon>Pantalla3.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P3_PinIncorrecto.resx">
+      <DependentUpon>P3_PinIncorrecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla4.resx">
-      <DependentUpon>Pantalla4.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P4_UsuarioBloqueado.resx">
+      <DependentUpon>P4_UsuarioBloqueado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla5.resx">
-      <DependentUpon>Pantalla5.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P5_SeleccionTransaccion.resx">
+      <DependentUpon>P5_SeleccionTransaccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla6.resx">
-      <DependentUpon>Pantalla6.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P6_VerBalance.resx">
+      <DependentUpon>P6_VerBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla7.resx">
-      <DependentUpon>Pantalla7.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P7_HacerRetiro.resx">
+      <DependentUpon>P7_HacerRetiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla8.resx">
-      <DependentUpon>Pantalla8.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P8_FondosInsuficientes.resx">
+      <DependentUpon>P8_FondosInsuficientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Pantalla9.resx">
-      <DependentUpon>Pantalla9.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\P9_ErrorDispensacion.resx">
+      <DependentUpon>P9_ErrorDispensacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vistas\TableroNumerico.resx">
       <DependentUpon>TableroNumerico.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="masterDataSet.xsc">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet.xss">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet1.xsc">
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet1.xss">
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -227,6 +261,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="bin\Debug\logo_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

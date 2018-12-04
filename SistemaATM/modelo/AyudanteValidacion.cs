@@ -68,7 +68,7 @@ namespace SistemaATM
         public static bool esMontoValido(int monto, int valorMax)
         {
             bool esValido = false;
-            if (monto > valorMax)
+            if (monto <= valorMax)
             {
                 esValido = true;
             }
@@ -78,7 +78,7 @@ namespace SistemaATM
         public static bool esMultiploDeDiez(int monto)
         {
             bool esMultiplo = false;
-            if (monto % 1 == 0)
+            if (monto % 10 == 0)
                 esMultiplo = true;
             return esMultiplo;
         }

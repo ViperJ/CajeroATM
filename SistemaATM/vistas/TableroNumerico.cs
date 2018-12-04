@@ -22,6 +22,8 @@ namespace SistemaATM.vistas
         public string NombreCampo { get => nombreCampo; set => nombreCampo = value; }
         public int LongitudCampo { get => datos_txb.MaxLength; set => datos_txb.MaxLength = value; }
 
+        public TextBox Datos_txb { get => datos_txb; set => datos_txb = value; }
+
         public TableroNumerico()
         {
             InitializeComponent();
@@ -113,12 +115,19 @@ namespace SistemaATM.vistas
 
         private void cancelar_btn_Click(object sender, EventArgs e)
         {
-            pantalla.cancelar();
+            pantalla.cancelarBtn_click();
         }
 
         private void borrar_btn_Click(object sender, EventArgs e)
         {
-            datos_txb.Text = datos_txb.Text.Remove(datos_txb.Text.Length - 1);
+            string texto = datos_txb.Text;
+            if (texto.Length > 0)
+                datos_txb.Text = datos_txb.Text.Remove(datos_txb.Text.Length - 1);
+        }
+
+        private void TableroNumerico_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
