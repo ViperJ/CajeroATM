@@ -204,7 +204,7 @@
             // datos_txb
             // 
             this.datos_txb.Location = new System.Drawing.Point(76, 18);
-            this.datos_txb.MaxLength = 16;
+            this.datos_txb.MaxLength = 20;
             this.datos_txb.Name = "datos_txb";
             this.datos_txb.Size = new System.Drawing.Size(220, 20);
             this.datos_txb.TabIndex = 32;

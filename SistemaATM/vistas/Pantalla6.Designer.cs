@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.balance_lb = new System.Windows.Forms.Label();
             this.tableroBotones_pnl = new System.Windows.Forms.Panel();
             this.aceptar_btn = new System.Windows.Forms.Button();
             this.cancelar_btn = new System.Windows.Forms.Button();
@@ -45,14 +45,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Su balance es:";
             // 
-            // label2
+            // balance_lb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "$dddd.dd";
+            this.balance_lb.AutoSize = true;
+            this.balance_lb.Location = new System.Drawing.Point(288, 167);
+            this.balance_lb.Name = "balance_lb";
+            this.balance_lb.Size = new System.Drawing.Size(52, 13);
+            this.balance_lb.TabIndex = 1;
+            this.balance_lb.Text = "$dddd.dd";
+            this.balance_lb.Click += new System.EventHandler(this.label2_Click);
             // 
             // tableroBotones_pnl
             // 
@@ -90,10 +91,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 423);
             this.Controls.Add(this.tableroBotones_pnl);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.balance_lb);
             this.Controls.Add(this.label1);
             this.Name = "Pantalla6";
             this.Text = "Pantalla6";
+            this.Load += new System.EventHandler(this.Pantalla6_Load);
             this.tableroBotones_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label balance_lb;
         private System.Windows.Forms.Panel tableroBotones_pnl;
         private System.Windows.Forms.Button aceptar_btn;
         private System.Windows.Forms.Button cancelar_btn;

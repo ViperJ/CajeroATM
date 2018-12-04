@@ -14,6 +14,11 @@ namespace SistemaATM.vistas
     {
         public static Form referencia;
 
+        private string numTarjeta;
+
+        public string NumTarjeta { get => numTarjeta; set => numTarjeta = value; }
+
+
         public Pantalla5()
         {
             InitializeComponent();
@@ -23,6 +28,7 @@ namespace SistemaATM.vistas
         private void verBalance_btn_Click(object sender, EventArgs e)
         {
             Pantalla6 pantalla6 = new Pantalla6();
+            pantalla6.NumTarjeta = numTarjeta;
             pantalla6.Show();
             this.Close();
         }

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using SistemaATM.SQL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,7 +26,7 @@ namespace SistemaATM.vistas
         {
             tableroNumerico1.Pantalla = this;
             tableroNumerico1.NombreCampo = "Tarjeta De Credito";
-            tableroNumerico1.LongitudCampo = 16;
+            tableroNumerico1.LongitudCampo = 20;
         }
 
         public void aceptarBtn_click(string dato)
@@ -37,7 +39,7 @@ namespace SistemaATM.vistas
                 return;
             }
             int longitudCampo = tableroNumerico1.LongitudCampo;
-            if (!AyudanteValidacion.esLongitudValida(dato, longitudCampo, longitudCampo))
+            if (!AyudanteValidacion.esLongitudValida(dato, 13, longitudCampo))
             {
                 msj = string.Format("El campo Tarjeta de Credito no cumple con la longitud requerida! La longitud debe de ser {0}", longitudCampo);
                 MessageBox.Show(this, msj, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,9 +59,26 @@ namespace SistemaATM.vistas
                 tipoTarjeta_lb.Visible = true;
             }
 
-            Pantalla2 pantalla2 = new Pantalla2();
-            pantalla2.Show();
-            this.Hide();
+            string r;
+
+            try
+            {
+                ConexionSQL conexionSql = new ConexionSQL();
+                r = conexionSql.query("up_busca_tarjeta_pin", "NUMERO_TARJETA", "@NUMERO_TARJETA", dato);
+                if (dato == r)
+                {
+                    Pantalla2 pantalla2 = new Pantalla2();
+                    pantalla2.NumTarjeta = dato;
+                    pantalla2.Show();
+                    this.Hide();
+                }
+            }
+            catch (Exception e)
+            {
+                if (e is SqlException || e is InvalidOperationException)
+                    MessageBox.Show(this, e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void Pantalla1_Load(object sender, EventArgs e)

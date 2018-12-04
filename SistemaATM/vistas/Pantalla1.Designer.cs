@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tipoTarjeta_lb = new System.Windows.Forms.Label();
             this.tableroNumerico1 = new SistemaATM.vistas.TableroNumerico();
+            this.sql_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +87,7 @@
             // tableroNumerico1
             // 
             this.tableroNumerico1.Location = new System.Drawing.Point(125, 152);
+            this.tableroNumerico1.LongitudCampo = 16;
             this.tableroNumerico1.Name = "tableroNumerico1";
             this.tableroNumerico1.NombreCampo = null;
             this.tableroNumerico1.Pantalla = null;
@@ -93,12 +95,22 @@
             this.tableroNumerico1.TabIndex = 4;
             this.tableroNumerico1.Load += new System.EventHandler(this.tableroNumerico1_Load);
             // 
+            // sql_label
+            // 
+            this.sql_label.AutoSize = true;
+            this.sql_label.Location = new System.Drawing.Point(64, 143);
+            this.sql_label.Name = "sql_label";
+            this.sql_label.Size = new System.Drawing.Size(35, 13);
+            this.sql_label.TabIndex = 6;
+            this.sql_label.Text = "label4";
+            // 
             // Pantalla1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(643, 453);
+            this.Controls.Add(this.sql_label);
             this.Controls.Add(this.tipoTarjeta_lb);
             this.Controls.Add(this.tableroNumerico1);
             this.Controls.Add(this.label3);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Label label3;
         private vistas.TableroNumerico tableroNumerico1;
         private System.Windows.Forms.Label tipoTarjeta_lb;
+        private System.Windows.Forms.Label sql_label;
     }
 }
 

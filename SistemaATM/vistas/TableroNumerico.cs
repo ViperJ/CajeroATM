@@ -15,6 +15,7 @@ namespace SistemaATM.vistas
         private Pantalla pantalla;
         private string nombreCampo;
         private bool caracterInvalido;
+        private string mascara;
 
         //public TextBox TextBox { get => textBox; set => textBox = value; }
         public Pantalla Pantalla { get => pantalla; set => pantalla = value; }
@@ -24,6 +25,7 @@ namespace SistemaATM.vistas
         public TableroNumerico()
         {
             InitializeComponent();
+            //.Mask = mascara;
         }
 
         private void escribirTextBox(string texto)
@@ -90,6 +92,8 @@ namespace SistemaATM.vistas
 
         private void datos_txb_TextChanged(object sender, EventArgs e)
         {
+            //string d = datos_txb.Text;
+            //datos_txb.Text = d.Replace(" ", "");
             if (caracterInvalido == true)
             {
                 caracterInvalido = false;
@@ -103,7 +107,7 @@ namespace SistemaATM.vistas
 
         private void datos_txb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!AyudanteValidacion.verificarCaracterEsValido(e.KeyChar))
+            if (!AyudanteValidacion.verificarSoloDigitos(e.KeyChar))
                 caracterInvalido = true;
         }
 

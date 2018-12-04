@@ -43,10 +43,10 @@ namespace SistemaATM
             return sonValidos;
         }
 
-        public static bool verificarCaracterEsValido(char c)
+        public static bool verificarSoloDigitos(char c)
         {
             bool esValido = false;
-            if (char.IsDigit(c))
+            if (char.IsControl(c) || char.IsDigit(c))
                 esValido = true;
             return esValido;
         }

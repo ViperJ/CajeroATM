@@ -1,7 +1,9 @@
-﻿using System;
+﻿using SistemaATM.SQL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,10 @@ namespace SistemaATM.vistas
         public static Form referencia;
         private static int numIntentos;
 
+        private string numTarjeta;
+
+        public string NumTarjeta { get => numTarjeta; set => numTarjeta = value; }
+
         public Pantalla2()
         {
             numIntentos = 0;
@@ -27,6 +33,7 @@ namespace SistemaATM.vistas
             tableroNumerico1.Pantalla = this;
             tableroNumerico1.NombreCampo = "PIN de Acceso";
             tableroNumerico1.LongitudCampo = 4;
+            //tableroNumerico1.tex
         }
 
         public void aceptarBtn_click(string dato)
@@ -46,24 +53,39 @@ namespace SistemaATM.vistas
                 return;
             }
 
-            if (numIntentos >= 3)
+            if (numIntentos >= 2)
             {
                 Pantalla4 pantalla4 = new Pantalla4();
                 pantalla4.Show();
                 this.Hide();
             }
-            else if (dato != "4444")
-            {
-                numIntentos++;
-                Pantalla3 pantalla3 = new Pantalla3();
-                pantalla3.Show();
-                this.Hide();
-            }
             else
             {
-                Pantalla5 pantalla5 = new Pantalla5();
-                pantalla5.Show();
-                this.Close();
+                string r;
+                try
+                {
+                    ConexionSQL conexionSql = new ConexionSQL();
+                    r = conexionSql.query("up_busca_tarjeta_pin", "PIN_TARJETA", "@NUMERO_TARJETA", numTarjeta);
+                    if (dato == r)
+                    {
+                        Pantalla5 pantalla5 = new Pantalla5();
+                        pantalla5.NumTarjeta = numTarjeta;
+                        pantalla5.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        numIntentos++;
+                        Pantalla3 pantalla3 = new Pantalla3();
+                        pantalla3.Show();
+                        this.Hide();
+                    }
+                }
+                catch (Exception e)
+                {
+                    if (e is SqlException || e is InvalidOperationException)
+                        MessageBox.Show(this, e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
